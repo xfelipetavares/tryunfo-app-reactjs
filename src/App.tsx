@@ -95,16 +95,20 @@ class App extends React.Component {
           <h1>Tryunfo</h1>
         </header>
         <main>
-          <Form onInputChange={this.handleChange} isSaveButtonDisabled={isSaveButtonDisabled} onSaveButtonClick={this.saveCards} validation={this.validator} {...this.state} />
-          <Card {...this.state} />
-          <ul>
-            {savedCards.map((cards, i) => (
-              <li key={i}>
-                <Card {...cards} />
-                <RemoveCardButton value={i} deleteCard={this.deleteCard} />
-              </li>
-            ))}
-          </ul>
+          <section className='main-top'>
+            <Form onInputChange={this.handleChange} isSaveButtonDisabled={isSaveButtonDisabled} onSaveButtonClick={this.saveCards} validation={this.validator} {...this.state} />
+            <Card {...this.state} />
+          </section>
+          <section className='main-bottom'>
+            <ul>
+              {savedCards.map((cards, i) => (
+                <li key={i}>
+                  <Card {...cards} />
+                  <RemoveCardButton value={i} deleteCard={this.deleteCard} />
+                </li>
+              ))}
+            </ul>
+          </section>
         </main>
       </>
     );

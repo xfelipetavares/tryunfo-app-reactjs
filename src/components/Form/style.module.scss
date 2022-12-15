@@ -1,0 +1,29 @@
+.form {
+  width: 40.4rem;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .atributos {
+
+  }
+  
+  .nomeInput, .descrInput {
+    border: none;
+    border-bottom: 1px solid;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  label {
+    h3 {
+      margin-bottom: 0.8rem;
+    }
+  }
+}
