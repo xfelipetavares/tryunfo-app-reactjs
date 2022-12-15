@@ -24,11 +24,11 @@ class Form extends React.Component {
             <input name="cardAttr1" type="number" required data-testid="attr1-input" value={cardAttr1} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
           </label>
           <label htmlFor="cardAttr2">
-            <h3>Atributo 1</h3>
+            <h3>Atributo 2</h3>
             <input name="cardAttr2" type="number" required data-testid="attr2-input" value={cardAttr2} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
           </label>
           <label htmlFor="cardAttr3">
-            <h3>Atributo 2</h3>
+            <h3>Atributo 3</h3>
             <input name="cardAttr3" type="number" required data-testid="attr3-input" value={cardAttr3} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
           </label>
           <p className={styles.pointsRemaining}>Pontos Restantes - 000</p>
