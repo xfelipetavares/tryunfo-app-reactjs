@@ -1,24 +1,71 @@
 .form {
   width: 40.4rem;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 
   h2 {
+    color: rgba(47, 193, 140, 1);
+    font-style: italic;
+    font-size: 2.8rem;
+    margin-top: 4.1rem;
     margin-bottom: 1rem;
   }
 
   .atributos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
+    .pointsRemaining {
+      margin-block: 0.8rem;
+      align-self: flex-end;
+    }    
+
+    label {
+      display: flex;
+      flex-direction: row;
+      gap: 3.2rem;
+      position: relative;
+
+      .imgLink {
+        position: absolute;
+        background: url('../../assets/imgLink.svg');
+        width: 4.6rem;
+        height: 3.7rem;
+        // z-index: 3;
+        right: 0;
+      }
+
+      h3 {
+        width: 15rem;
+        margin-top: auto;
+        // border: 1px solid red;
+      }
+      
+      input {
+        border: 1px solid black;
+        width: 100%;
+        height: 3.7rem;
+        padding-inline: 1rem;
+      }
+    }
   }
   
-  .nomeInput, .descrInput {
+  .nomeInput, .descrInput, .inputSelect {
     border: none;
     border-bottom: 1px solid;
     display: flex;
     flex-direction: column;
     width: 100%;
+    font-size: large;
+  }
+  
+  select {
+    background: none;
+    padding-inline: 1rem;
+    height: 4rem;
+    font-size: large;
   }
 
   label {
@@ -26,4 +73,26 @@
       margin-bottom: 0.8rem;
     }
   }
+
+  button {
+    background: rgba(47, 193, 140, 1);
+    width: 11.5rem;
+    height: 4rem;
+    color: white;
+    font-size: large;
+    border-radius: 0.2rem;
+  }
+
+  input[type=checkbox] {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+  }
+
+  .formBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
+

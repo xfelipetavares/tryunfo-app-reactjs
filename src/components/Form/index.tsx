@@ -31,19 +31,25 @@ class Form extends React.Component {
             <h3>Atributo 2</h3>
             <input name="cardAttr3" type="number" required data-testid="attr3-input" value={cardAttr3} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
           </label>
+          <p className={styles.pointsRemaining}>Pontos Restantes - 000</p>
           <label id="image-input" htmlFor="cardImage">
             <h3>Imagem</h3>
             <input name="cardImage" type="text" required data-testid="image-input" value={cardImage} onChange={onInputChange} onKeyUp={validation} />
+            <div className={styles.imgLink}></div>
           </label>
         </section>
 
-        <select name="cardRare" className='select-input' value={cardRare} onChange={onInputChange} data-testid="rare-input" onKeyUp={validation}>
-          <option value="normal">Normal</option>
-          <option value="raro">Raro</option>
-          <option value="muito raro">Muito Raro</option>
-        </select>
+        
+        <label className={styles.inputSelect} htmlFor="cardRare">
+          <h3>Raridade</h3>
+          <select name="cardRare" className='select-input' value={cardRare} onChange={onInputChange} data-testid="rare-input" onKeyUp={validation}>
+            <option value="normal">Normal</option>
+            <option value="raro">Raro</option>
+            <option value="muito raro">Muito Raro</option>
+          </select>
+        </label>
 
-        <div>
+        <div className={styles.formBottom}>
           {hasTrunfo ? 'Você já tem um Super Trunfo em seu baralho' : <TrunfoCheckbox cardTrunfo={cardTrunfo} onInputChange={onInputChange} />}
           <button type="submit" data-testid="save-button" disabled={isSaveButtonDisabled} onClick={onSaveButtonClick}>
             Salvar
