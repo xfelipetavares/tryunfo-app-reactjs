@@ -5,14 +5,14 @@ import RemoveCardButton from './components/RemoveCardButton';
 
 class App extends React.Component {
   state = {
-    cardName: '',
-    cardDescription: '',
+    cardName: 'JavaScript',
+    cardDescription: 'Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma. É uma das três principais tecnologias da World Wide Web.',
     cardAttr1: '0',
     cardAttr2: '0',
     cardAttr3: '0',
-    cardImage: '',
+    cardImage: 'https://conteudo.imguol.com.br/c/esporte/08/2022/11/24/richarlison-se-lamenta-no-jogo-do-brasil-contra-a-servia-pela-copa-do-mundo-1669320823054_v2_450x450.jpg',
     cardRare: 'Normal',
-    cardTrunfo: false,
+    cardTrunfo: true,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     savedCards: [],
