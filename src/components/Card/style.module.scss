@@ -1,5 +1,111 @@
-.card {
-  border: 1px solid red;
-  width: 35.81rem;
-  height: 53.43rem;
+.rightSide {
+
+  .card {
+    width: 33.87rem;
+    height: 51.48rem;
+    box-shadow: 0 0 0 9.7px white, 0px 0px 20px 3px black;
+    border-radius: 9.73px;
+    background: #036b52;
+    padding: 1.5rem;
+    position: relative;
+
+    h3 {
+      color: white;
+      background: rgba(2, 48, 49, 0.523);
+      position: absolute;
+      width: calc(100% - 3rem);
+      border-radius: 9.73px 9.73px 0px 0px;
+      text-align: right;
+      height: 3.9rem;
+      font-size: 2.8rem;
+      padding-right: 1rem;
+      padding-left: auto;
+      z-index: 2;
+    }
+
+    .mainImageCard {
+      border-radius: 9.73px 9.73px 0px 0px;
+      width: 100%;
+      height: 27.05rem;
+      object-fit: cover;
+      clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
+    }
+
+    .descrip {
+      transform: rotate(-6.92deg);
+      width: 100%;
+      padding: 0.2rem;
+      margin-top: -1.6rem;
+      margin-bottom: 2.5rem;
+      text-align: justify;
+      font-size: 1.1rem;
+      color: white;
+    }
+
+    .superTrunfoImage {
+      position: absolute;
+      top: 36%;
+      right: -5%;
+      width: 12rem;
+      z-index: 2;
+    }
+
+    .infos {
+      background: white;
+      padding: 1.65rem;
+      clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
+      height: 17.4rem;
+      position: absolute;
+      width: calc(100% - 3rem);
+      bottom: 1.5rem;
+      border-radius: 0 0 9.37px 9.37px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      .raridade {
+        position: absolute;
+        right: 1.7rem;
+        top: 2.8rem;
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        label {
+          width: 100%;
+          height: 3rem;
+          display: flex;
+          align-items: center;
+          position: relative;
+          background: #f0f2f5;
+          border-radius: 9.73px;
+          padding: 0.5rem;
+          font-weight: 600;
+          color: #3D495C;
+
+          li {
+            list-style: none;
+            background: rgba(2, 48, 49, 1);
+            width: 6.67rem;
+            height: 100%;
+            display: grid;
+            place-content: center;
+            z-index: 2;
+            position: absolute;
+            right: 0;
+            border-radius: 0 9.73px 9.73px 0;
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }

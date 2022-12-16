@@ -1,7 +1,9 @@
 import React from 'react';
 import Card from './components/Card';
+import Filter from './components/Filter';
 import Form from './components/Form';
 import RemoveCardButton from './components/RemoveCardButton';
+import logo_trybe from './assets/logo_tryunfo.png'
 
 class App extends React.Component {
   state = {
@@ -92,15 +94,22 @@ class App extends React.Component {
     return (
       <>
         <header>
-          <h1>Tryunfo</h1>
+          <img className='logo' src={logo_trybe} alt="" />
         </header>
         <main>
-          <section className='main-top'>
-            <Form onInputChange={this.handleChange} isSaveButtonDisabled={isSaveButtonDisabled} onSaveButtonClick={this.saveCards} validation={this.validator} {...this.state} />
-            <Card {...this.state} />
+          <section className="main-top">
+            <div className="left">
+              <Form onInputChange={this.handleChange} isSaveButtonDisabled={isSaveButtonDisabled} onSaveButtonClick={this.saveCards} validation={this.validator} {...this.state} />
+            </div>
+            <div className="right">
+              <h2>Preview</h2>
+              <Card {...this.state} />
+            </div>
           </section>
-          <section className='main-bottom'>
-            <ul>
+          <section className="main-bottom">
+            <h2 className='titleDeck'>TODAS AS CARTAS</h2>
+            <Filter />
+            <ul className="deck">
               {savedCards.map((cards, i) => (
                 <li key={i}>
                   <Card {...cards} />
