@@ -43,9 +43,9 @@ class Form extends React.Component {
         <label className={styles.inputSelect} htmlFor="cardRare">
           <h3>Raridade</h3>
           <select name="cardRare" className='select-input' value={cardRare} onChange={onInputChange} data-testid="rare-input" onKeyUp={validation}>
-            <option value="normal">Normal</option>
-            <option value="raro">Raro</option>
-            <option value="muito raro">Muito Raro</option>
+            <option value="Normal">Normal</option>
+            <option value="Raro">Raro</option>
+            <option value="Muito Raro">Muito Raro</option>
           </select>
         </label>
 

@@ -1,21 +1,94 @@
 import React from 'react';
 import Card from './components/Card';
+import Filter from './components/Filter';
 import Form from './components/Form';
 import RemoveCardButton from './components/RemoveCardButton';
+import logo_trybe from './assets/logo_tryunfo.png'
 
 class App extends React.Component {
   state = {
     cardName: 'JavaScript',
     cardDescription: 'Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma. É uma das três principais tecnologias da World Wide Web.',
-    cardAttr1: '0',
-    cardAttr2: '0',
-    cardAttr3: '0',
+    cardAttr1: '90',
+    cardAttr2: '90',
+    cardAttr3: '30',
     cardImage: 'https://conteudo.imguol.com.br/c/esporte/08/2022/11/24/richarlison-se-lamenta-no-jogo-do-brasil-contra-a-servia-pela-copa-do-mundo-1669320823054_v2_450x450.jpg',
     cardRare: 'Normal',
     cardTrunfo: true,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
-    savedCards: [],
+    savedCards: [
+      {
+        cardName: 'JavaScript',
+        cardDescription: 'Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma. É uma das três principais tecnologias da World Wide Web.',
+        cardAttr1: '90',
+        cardAttr2: '90',
+        cardAttr3: '30',
+        cardImage: 'https://conteudo.imguol.com.br/c/esporte/08/2022/11/24/richarlison-se-lamenta-no-jogo-do-brasil-contra-a-servia-pela-copa-do-mundo-1669320823054_v2_450x450.jpg',
+        cardRare: 'Normal',
+        cardTrunfo: true,
+      },
+      {
+        cardName: 'JavaScript',
+        cardDescription: 'Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma. É uma das três principais tecnologias da World Wide Web.',
+        cardAttr1: '90',
+        cardAttr2: '90',
+        cardAttr3: '30',
+        cardImage: 'https://conteudo.imguol.com.br/c/esporte/08/2022/11/24/richarlison-se-lamenta-no-jogo-do-brasil-contra-a-servia-pela-copa-do-mundo-1669320823054_v2_450x450.jpg',
+        cardRare: 'Normal',
+        cardTrunfo: true,
+      },
+      {
+        cardName: 'JavaScript',
+        cardDescription: 'Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma. É uma das três principais tecnologias da World Wide Web.',
+        cardAttr1: '90',
+        cardAttr2: '90',
+        cardAttr3: '30',
+        cardImage: 'https://conteudo.imguol.com.br/c/esporte/08/2022/11/24/richarlison-se-lamenta-no-jogo-do-brasil-contra-a-servia-pela-copa-do-mundo-1669320823054_v2_450x450.jpg',
+        cardRare: 'Normal',
+        cardTrunfo: true,
+      },
+      {
+        cardName: 'JavaScript',
+        cardDescription: 'Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma. É uma das três principais tecnologias da World Wide Web.',
+        cardAttr1: '90',
+        cardAttr2: '90',
+        cardAttr3: '30',
+        cardImage: 'https://conteudo.imguol.com.br/c/esporte/08/2022/11/24/richarlison-se-lamenta-no-jogo-do-brasil-contra-a-servia-pela-copa-do-mundo-1669320823054_v2_450x450.jpg',
+        cardRare: 'Normal',
+        cardTrunfo: true,
+      },
+      {
+        cardName: 'JavaScript',
+        cardDescription: 'Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma. É uma das três principais tecnologias da World Wide Web.',
+        cardAttr1: '90',
+        cardAttr2: '90',
+        cardAttr3: '30',
+        cardImage: 'https://conteudo.imguol.com.br/c/esporte/08/2022/11/24/richarlison-se-lamenta-no-jogo-do-brasil-contra-a-servia-pela-copa-do-mundo-1669320823054_v2_450x450.jpg',
+        cardRare: 'Normal',
+        cardTrunfo: true,
+      },
+      {
+        cardName: 'JavaScript',
+        cardDescription: 'Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma. É uma das três principais tecnologias da World Wide Web.',
+        cardAttr1: '90',
+        cardAttr2: '90',
+        cardAttr3: '30',
+        cardImage: 'https://conteudo.imguol.com.br/c/esporte/08/2022/11/24/richarlison-se-lamenta-no-jogo-do-brasil-contra-a-servia-pela-copa-do-mundo-1669320823054_v2_450x450.jpg',
+        cardRare: 'Normal',
+        cardTrunfo: true,
+      },
+      {
+        cardName: 'JavaScript',
+        cardDescription: 'Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma. É uma das três principais tecnologias da World Wide Web.',
+        cardAttr1: '90',
+        cardAttr2: '90',
+        cardAttr3: '30',
+        cardImage: 'https://conteudo.imguol.com.br/c/esporte/08/2022/11/24/richarlison-se-lamenta-no-jogo-do-brasil-contra-a-servia-pela-copa-do-mundo-1669320823054_v2_450x450.jpg',
+        cardRare: 'Normal',
+        cardTrunfo: true,
+      },
+    ],
   };
 
   handleChange = ({ target: { value, name, type, checked } }) => {
@@ -92,15 +165,22 @@ class App extends React.Component {
     return (
       <>
         <header>
-          <h1>Tryunfo</h1>
+          <img className='logo' src={logo_trybe} alt="" />
         </header>
         <main>
-          <section className='main-top'>
-            <Form onInputChange={this.handleChange} isSaveButtonDisabled={isSaveButtonDisabled} onSaveButtonClick={this.saveCards} validation={this.validator} {...this.state} />
-            <Card {...this.state} />
+          <section className="main-top">
+            <div className="left">
+              <Form onInputChange={this.handleChange} isSaveButtonDisabled={isSaveButtonDisabled} onSaveButtonClick={this.saveCards} validation={this.validator} {...this.state} />
+            </div>
+            <div className="right">
+              <h2>Preview</h2>
+              <Card {...this.state} />
+            </div>
           </section>
-          <section className='main-bottom'>
-            <ul>
+          <section className="main-bottom">
+            <h2 className='titleDeck'>TODAS AS CARTAS</h2>
+            <Filter />
+            <ul className="deck">
               {savedCards.map((cards, i) => (
                 <li key={i}>
                   <Card {...cards} />
