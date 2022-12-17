@@ -1,18 +1,18 @@
 import styles from './style.module.scss';
 import superTrunfoLogo from '../../assets/superTrunfoLogo.png';
 
-interface propsTypes {
-  cardName: string;
-  cardDescription: string;
-  cardAttr1: number;
-  cardAttr2: number;
-  cardAttr3: number;
-  cardImage: string;
-  cardRare: string;
-  cardTrunfo: boolean;
-}
+// interface propsTypes {
+//   cardName: string;
+//   cardDescription: string;
+//   cardAttr1: number;
+//   cardAttr2: number;
+//   cardAttr3: number;
+//   cardImage: string;
+//   cardRare: string;
+//   cardTrunfo: boolean;
+// }
 
-export default function Card(props: propsTypes) {
+export default function Card(props) {
   const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo } = props;
   
   return (

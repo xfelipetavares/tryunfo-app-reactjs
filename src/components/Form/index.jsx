@@ -1,23 +1,23 @@
 import styles from './style.module.scss';
 import TrunfoCheckbox from '../TrunfoCheckbox';
 
-interface propsTypes {
-  cardName: string;
-  cardDescription: string;
-  cardAttr1: number;
-  cardAttr2: number;
-  cardAttr3: number;
-  cardImage: string;
-  cardRare: string;
-  cardTrunfo: boolean;
-  isSaveButtonDisabled: boolean,
-  onInputChange: Function,
-  onSaveButtonClick: Function,
-  hasTrunfo: boolean,
-  validation: Function,
-}
+// interface propsTypes {
+//   cardName: string;
+//   cardDescription: string;
+//   cardAttr1: number;
+//   cardAttr2: number;
+//   cardAttr3: number;
+//   cardImage: string;
+//   cardRare: string;
+//   cardTrunfo: boolean;
+//   isSaveButtonDisabled: boolean,
+//   onInputChange: Function,
+//   onSaveButtonClick: Function,
+//   hasTrunfo: boolean,
+//   validation: Function,
+// }
 
-export default function Form(props: propsTypes) {
+export default function Form(props) {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, isSaveButtonDisabled, cardTrunfo, onInputChange, onSaveButtonClick, hasTrunfo, validation } = props;
 
     const column = 25;
