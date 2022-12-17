@@ -1,5 +1,6 @@
 import styles from './style.module.scss';
 import superTrunfoLogo from '../../assets/superTrunfoLogo.png';
+import defaultImage from '../../assets/imageDefault.png'
 
 // interface propsTypes {
 //   cardName: string;
@@ -18,9 +19,9 @@ export default function Card(props) {
   return (
     <div className={styles.rightSide}>
       <div className={styles.card}>
-        <h3>{cardName}</h3>
-        <img className={styles.mainImageCard} src={cardImage} alt={cardName} />
-        <p className={styles.descrip}>{cardDescription}</p>
+        <h3>{cardName || 'Nome da Carta'}</h3>
+        <img className={styles.mainImageCard} src={cardImage || defaultImage} alt={cardName} />
+        <p className={styles.descrip}>{cardDescription || 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard.'}</p>
         <div className={styles.infos}>
           <ul>
             <label>

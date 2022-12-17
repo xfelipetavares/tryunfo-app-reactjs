@@ -1,5 +1,4 @@
 .rightSide {
-
   .card {
     width: 33.87rem;
     height: 51.48rem;
@@ -32,14 +31,18 @@
     }
 
     .descrip {
-      transform: rotate(-6.92deg);
       width: 100%;
-      padding: 0.2rem;
-      margin-top: -1.6rem;
+      // border: red 1px solid;
+      margin-top: -1.8rem;
       margin-bottom: 2.5rem;
+      padding: 0.3rem;
       text-align: justify;
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       color: white;
+      // transform: skew(-7deg) rotate(-6.92deg);
+      -webkit-transform: skew(-7deg) rotate(-6.92deg);
+      -moz-transform: skew(-7deg) rotate(-6.92deg);
+      -o-transform: skew(-7deg) rotate(-6.92deg);
     }
 
     .superTrunfoImage {
@@ -53,7 +56,7 @@
     .infos {
       background: white;
       padding: 1.65rem;
-      clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
+      clip-path: polygon(0 21%, 100% 0, 100% 100%, 0% 100%);
       height: 17.4rem;
       position: absolute;
       width: calc(100% - 3rem);
@@ -89,7 +92,7 @@
           border-radius: 9.73px;
           padding: 0.5rem;
           font-weight: 600;
-          color: #3D495C;
+          color: #3d495c;
 
           li {
             list-style: none;

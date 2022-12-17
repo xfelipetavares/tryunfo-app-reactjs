@@ -32,7 +32,7 @@ export default function Form(props) {
         </label>
         <label className={styles.descrInput} htmlFor="cardDescription">
           <h3>Descrição</h3>
-          <textarea name="cardDescription" cols={column} rows={rows} required maxLength={100} value={cardDescription} onChange={onInputChange} onKeyUp={validation} />
+          <textarea name="cardDescription" cols={column} rows={rows} required maxLength={211} value={cardDescription} onChange={onInputChange} onKeyUp={validation} />
         </label>
 
         <section className={styles.atributos}>
