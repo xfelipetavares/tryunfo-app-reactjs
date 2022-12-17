@@ -1,10 +1,27 @@
-import React from 'react';
 import styles from './style.module.scss';
 import TrunfoCheckbox from '../TrunfoCheckbox';
 
-class Form extends React.Component {
-  render() {
-    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, isSaveButtonDisabled, cardTrunfo, onInputChange, onSaveButtonClick, hasTrunfo, validation } = this.props;
+interface propsTypes {
+  cardName: string;
+  cardDescription: string;
+  cardAttr1: number;
+  cardAttr2: number;
+  cardAttr3: number;
+  cardImage: string;
+  cardRare: string;
+  cardTrunfo: boolean;
+  isSaveButtonDisabled: boolean,
+  onInputChange: Function,
+  onSaveButtonClick: Function,
+  hasTrunfo: boolean,
+  validation: Function,
+}
+
+export default function Form(props: propsTypes) {
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, isSaveButtonDisabled, cardTrunfo, onInputChange, onSaveButtonClick, hasTrunfo, validation } = props;
+
+    const column = 25;
+    const rows = 3;
 
     return (
       <form id="forms" className={styles.form}>
@@ -15,7 +32,7 @@ class Form extends React.Component {
         </label>
         <label className={styles.descrInput} htmlFor="cardDescription">
           <h3>Descrição</h3>
-          <textarea name="cardDescription" cols="25" rows="3" required maxLength={100} value={cardDescription} onChange={onInputChange} onKeyUp={validation} />
+          <textarea name="cardDescription" cols={column} rows={rows} required maxLength={100} value={cardDescription} onChange={onInputChange} onKeyUp={validation} />
         </label>
 
         <section className={styles.atributos}>
@@ -56,7 +73,4 @@ class Form extends React.Component {
         </div>
       </form>
     );
-  }
 }
-
-export default Form;
