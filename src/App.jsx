@@ -3,7 +3,7 @@ import Card from './components/Card';
 import Filter from './components/Filter';
 import Form from './components/Form';
 import RemoveCardButton from './components/RemoveCardButton';
-import logo_trybe from './assets/logo_tryunfo.png'
+import logo_trybe from './assets/logo_tryunfo.png';
 
 class App extends React.Component {
   state = {
@@ -18,6 +18,7 @@ class App extends React.Component {
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     savedCards: [],
+    counter: 210,
   };
 
   handleChange = ({ target: { value, name, type, checked } }) => {
@@ -38,9 +39,13 @@ class App extends React.Component {
 
   validator = () => {
     const { cardAttr1, cardAttr2, cardAttr3 } = this.state;
-    const param = 211;
-    const sum = +cardAttr1 + +cardAttr2 + +cardAttr3 < param;
+    const param = 210;
+    const sum = +cardAttr1 + +cardAttr2 + +cardAttr3 <= param;
+
+    const counter = param - (+cardAttr1 + +cardAttr2 + +cardAttr3)
     const forms = document.getElementById('forms');
+
+    this.setState({ counter: counter });
     if (sum && forms.checkValidity()) {
       this.setState({ isSaveButtonDisabled: false });
     } else {
@@ -94,7 +99,7 @@ class App extends React.Component {
     return (
       <>
         <header>
-          <img className='logo' src={logo_trybe} alt="" />
+          <img className="logo" src={logo_trybe} alt="" />
         </header>
         <main>
           <section className="main-top">
@@ -107,7 +112,7 @@ class App extends React.Component {
             </div>
           </section>
           <section className="main-bottom">
-            <h2 className='titleDeck'>TODAS AS CARTAS</h2>
+            <h2 className="titleDeck">TODAS AS CARTAS</h2>
             <Filter />
             <ul className="deck">
               {savedCards.map((cards, i) => (

@@ -18,7 +18,7 @@ import TrunfoCheckbox from '../TrunfoCheckbox';
 // }
 
 export default function Form(props) {
-    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, isSaveButtonDisabled, cardTrunfo, onInputChange, onSaveButtonClick, hasTrunfo, validation } = props;
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, isSaveButtonDisabled, cardTrunfo, onInputChange, onSaveButtonClick, hasTrunfo, validation, counter } = props;
 
     const column = 25;
     const rows = 3;
@@ -32,7 +32,7 @@ export default function Form(props) {
         </label>
         <label className={styles.descrInput} htmlFor="cardDescription">
           <h3>Descrição</h3>
-          <textarea name="cardDescription" cols={column} rows={rows} required maxLength={211} value={cardDescription} onChange={onInputChange} onKeyUp={validation} />
+          <textarea name="cardDescription" cols={column} rows={rows} required maxLength={118} value={cardDescription} onChange={onInputChange} onKeyUp={validation} />
         </label>
 
         <section className={styles.atributos}>
@@ -48,7 +48,7 @@ export default function Form(props) {
             <h3>Atributo 3</h3>
             <input name="cardAttr3" type="number" required value={cardAttr3} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
           </label>
-          <p className={styles.pointsRemaining}>Pontos Restantes - 000</p>
+          <p className={styles.pointsRemaining}>Pontos Restantes - {counter}</p>
           <label id="image-input" htmlFor="cardImage">
             <h3>Imagem</h3>
             <input name="cardImage" type="text" required value={cardImage} onChange={onInputChange} onKeyUp={validation} />
