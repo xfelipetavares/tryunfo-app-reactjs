@@ -79,8 +79,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     row-gap: 4rem;
+    gap: 4rem;
     width: 112.4rem;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
     height: fit-content;
     padding: 1rem;
