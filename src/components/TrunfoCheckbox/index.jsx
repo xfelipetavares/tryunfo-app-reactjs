@@ -1,15 +1,14 @@
-import React from 'react';
+// interface propsTypes {
+//   cardTrunfo: boolean,
+//   onInputChange: Function,
+// }
 
-class TrunfoCheckbox extends React.Component {
-  render() {
-    const { cardTrunfo, onInputChange } = this.props;
+export default function TrunfoCheckbox(props){
+    const { cardTrunfo, onInputChange } = props;
     return (
       <label htmlFor="cardTrunfo">
         <input name="cardTrunfo" id="cardTrunfo" type="checkbox" data-testid="trunfo-input" checked={cardTrunfo} onChange={onInputChange} />
         Super Trunfo
       </label>
     );
-  }
 }
-
-export default TrunfoCheckbox;
