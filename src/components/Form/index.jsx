@@ -18,10 +18,11 @@ import TrunfoCheckbox from '../TrunfoCheckbox';
 // }
 
 export default function Form(props) {
-    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, isSaveButtonDisabled, cardTrunfo, onInputChange, onSaveButtonClick, hasTrunfo, validation, counter } = props;
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, isSaveButtonDisabled, cardTrunfo, onInputChange, onSaveButtonClick, hasTrunfo, validation, counter, changeAttributNameField } = props;
 
     const column = 25;
     const rows = 3;
+    const maxlength = 18
 
     return (
       <form id="forms" className={styles.form}>
@@ -36,18 +37,25 @@ export default function Form(props) {
         </label>
 
         <section className={styles.atributos}>
+
           <label htmlFor="cardAttr1">
-            <h3>Atributo 1</h3>
-            <input name="cardAttr1" type="number" required value={cardAttr1} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
+            {/* <h3>Atributo 1</h3> */}
+            <input type="text" placeholder='Atributo 1' maxLength={maxlength} name='atribNameField1' onChange={changeAttributNameField} className={styles.nameAtributField} />
+            <input className={styles.atributoFilds} name="cardAttr1" type="number" required value={cardAttr1} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
           </label>
+
           <label htmlFor="cardAttr2">
-            <h3>Atributo 2</h3>
-            <input name="cardAttr2" type="number" required value={cardAttr2} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
+            {/* <h3>Atributo 2</h3> */}
+            <input type="text" placeholder='Atributo 2' maxLength={maxlength} name='atribNameField2' onChange={changeAttributNameField} className={styles.nameAtributField} />
+            <input className={styles.atributoFilds} name="cardAttr2" type="number" required value={cardAttr2} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
           </label>
+
           <label htmlFor="cardAttr3">
-            <h3>Atributo 3</h3>
-            <input name="cardAttr3" type="number" required value={cardAttr3} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
+            {/* <h3>Atributo 3</h3> */}
+            <input type="text" placeholder='Atributo 3' maxLength={maxlength} name='atribNameField3' onChange={changeAttributNameField} className={styles.nameAtributField} /> 
+            <input className={styles.atributoFilds} name="cardAttr3" type="number" required value={cardAttr3} onChange={onInputChange} onKeyUp={validation} max={90} min={0} />
           </label>
+
           <p className={styles.pointsRemaining}>Pontos Restantes - {counter}</p>
           <label id="image-input" htmlFor="cardImage">
             <h3>Imagem</h3>

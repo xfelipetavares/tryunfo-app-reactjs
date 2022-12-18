@@ -12,6 +12,9 @@ class App extends React.Component {
     cardAttr1: '0',
     cardAttr2: '0',
     cardAttr3: '0',
+    atribNameField1: '',
+    atribNameField2: '',
+    atribNameField3: '',
     cardImage: '',
     cardRare: 'Normal',
     cardTrunfo: false,
@@ -54,22 +57,28 @@ class App extends React.Component {
     }
   };
 
+  changeAttributNameField = ({target: {name, value}}) => {
+    this.setState({[name]: value})
+  }
+
   cleaner = () => {
     this.setState({ cardName: '' });
     this.setState({ cardDescription: '' });
     this.setState({ cardAttr1: 0 });
     this.setState({ cardAttr2: 0 });
     this.setState({ cardAttr3: 0 });
+    this.setState({ atribNameField1: '' });
+    this.setState({ atribNameField2: '' });
+    this.setState({ atribNameField3: '' });
     this.setState({ cardImage: '' });
     this.setState({ cardRare: 'Normal' });
     this.setState({ cardTrunfo: false });
     this.setState({ isSaveButtonDisabled: true });
-    console.log(JSON.parse(localStorage.getItem('savedCards')));
   };
 
   saveCards = (event) => {
     event.preventDefault();
-    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo } = this.state;
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo, atribNameField1, atribNameField2, atribNameField3 } = this.state;
     const cards = {
       cardName,
       cardDescription,
@@ -79,6 +88,9 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      atribNameField1,
+      atribNameField2,
+      atribNameField3,
     };
 
     const jatenho = JSON.parse(localStorage.getItem('savedCards')) || []
@@ -110,7 +122,7 @@ class App extends React.Component {
         <main>
           <section className="main-top">
             <div className="left">
-              <Form onInputChange={this.handleChange} isSaveButtonDisabled={isSaveButtonDisabled} onSaveButtonClick={this.saveCards} validation={this.validator} {...this.state} />
+              <Form onInputChange={this.handleChange} changeAttributNameField={this.changeAttributNameField} isSaveButtonDisabled={isSaveButtonDisabled} onSaveButtonClick={this.saveCards} validation={this.validator} {...this.state} />
             </div>
             <div className="right">
               <h2>Preview</h2>

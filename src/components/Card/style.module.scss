@@ -70,7 +70,7 @@
         position: absolute;
         right: 1.7rem;
         top: 2.8rem;
-
+        
         span {
           font-weight: 600;
         }
@@ -87,10 +87,11 @@
           height: 3rem;
           display: flex;
           align-items: center;
+          justify-content: space-between;
           position: relative;
-          background: #f0f2f5;
+          background: #dadce0;
           border-radius: 9.73px;
-          padding: 0.5rem;
+          padding-left: 2rem;
           font-weight: 600;
           color: #3d495c;
 
@@ -101,8 +102,8 @@
             height: 100%;
             display: grid;
             place-content: center;
-            z-index: 2;
-            position: absolute;
+            // z-index: 2;
+            // position: absolute;
             right: 0;
             border-radius: 0 9.73px 9.73px 0;
             color: white;
