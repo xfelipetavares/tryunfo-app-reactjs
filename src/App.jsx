@@ -17,11 +17,10 @@ class App extends React.Component {
     atribNameField3: '',
     cardImage: '',
     cardRare: 'Normal',
-    cardTrunfo: false,
-    hasTrunfo: false,
+    cardTrunfo: JSON.parse(localStorage.getItem('cardTrunfo')) || false,
+    hasTrunfo: JSON.parse(localStorage.getItem('hasTrunfo')) || false,
     isSaveButtonDisabled: true,
     savedCards: JSON.parse(localStorage.getItem('savedCards')) || [],
-    savingCard: [],
     counter: 210,
   };
 
@@ -30,11 +29,16 @@ class App extends React.Component {
     const { hasTrunfo, cardTrunfo } = this.state;
     if (name === 'cardTrunfo') {
       if (!hasTrunfo && !cardTrunfo) {
-        this.setState({ hasTrunfo: true });
-        this.setState({ cardTrunfo: true });
-      } else {
-        this.setState({ hasTrunfo: false });
-        this.setState({ cardTrunfo: false });
+        localStorage.setItem('hasTrunfo', true)
+        localStorage.setItem('cardTrunfo', true)
+        this.setState({ hasTrunfo: JSON.parse(localStorage.getItem('hasTrunfo')) });
+        this.setState({ cardTrunfo: JSON.parse(localStorage.getItem('cardTrunfo')) });
+      } 
+      else {
+        localStorage.setItem('hasTrunfo', false)
+        localStorage.setItem('cardTrunfo', false)
+        this.setState({ hasTrunfo: JSON.parse(localStorage.getItem('hasTrunfo')) });
+        this.setState({ cardTrunfo: JSON.parse(localStorage.getItem('cardTrunfo')) });
       }
     } else {
       this.setState({ [name]: isChecked });
@@ -72,7 +76,7 @@ class App extends React.Component {
     this.setState({ atribNameField3: '' });
     this.setState({ cardImage: '' });
     this.setState({ cardRare: 'Normal' });
-    this.setState({ cardTrunfo: false });
+    this.setState({ cardTrunfo: localStorage.setItem('cardTrunfo', false) });
     this.setState({ isSaveButtonDisabled: true });
   };
 
@@ -103,13 +107,20 @@ class App extends React.Component {
   deleteCard = ({ target }) => {
     const { savedCards } = this.state;
     const newCardsSaved = savedCards.filter((e, i) => i !== +target.value);
-    console.log(newCardsSaved);
+
     localStorage.setItem('savedCards', JSON.stringify(newCardsSaved))
+    localStorage.setItem('hasTrunfo', newCardsSaved.some((e) => e.cardTrunfo))
+
     this.setState({
-      hasTrunfo: newCardsSaved.some((e) => e.cardTrunfo),
+      hasTrunfo: JSON.parse(localStorage.getItem('hasTrunfo')),
       savedCards: JSON.parse(localStorage.getItem('savedCards')),
     });
   };
+
+  resetStart = () => {
+    localStorage.setItem('cardTrunfo', false)
+    this.setState({ cardTrunfo: JSON.parse(localStorage.getItem('cardTrunfo')) });
+  }
 
   render() {
     const { isSaveButtonDisabled } = this.state;
@@ -117,7 +128,7 @@ class App extends React.Component {
     return (
       <>
         <header>
-          <img className="logo" src={logo_trybe} alt="" />
+          <img className="logo" onLoad={this.resetStart} src={logo_trybe} alt="" />
         </header>
         <main>
           <section className="main-top">
@@ -130,8 +141,8 @@ class App extends React.Component {
             </div>
           </section>
           <section className="main-bottom">
-            <h2 className="titleDeck">TODAS AS CARTAS</h2>
-            <Filter />
+            <h2 className="titleDeck">Meu Deck</h2>
+            {/* <Filter /> */}
             <ul className="deck">
               {savedCards.map((cards, i) => (
                 <li key={i}>
