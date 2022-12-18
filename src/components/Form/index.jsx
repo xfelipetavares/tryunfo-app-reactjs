@@ -27,17 +27,18 @@ export default function Form(props) {
     return (
       <form id="forms" className={styles.form}>
         <h2>ADICIONE UMA NOVA CARTA</h2>
+        
         <label className={styles.nomeInput} htmlFor="cardName">
           <h3>Nome</h3>
-          <input type="text" required name="cardName" value={cardName} onChange={onInputChange} onKeyUp={validation} />
+          <input type="text" placeholder='Nome da Carta' required name="cardName" value={cardName} onChange={onInputChange} onKeyUp={validation} />
         </label>
+
         <label className={styles.descrInput} htmlFor="cardDescription">
           <h3>Descrição</h3>
-          <textarea name="cardDescription" cols={column} rows={rows} required maxLength={118} value={cardDescription} onChange={onInputChange} onKeyUp={validation} />
+          <textarea name="cardDescription" placeholder='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard.' cols={column} rows={rows} required maxLength={118} value={cardDescription} onChange={onInputChange} onKeyUp={validation} />
         </label>
 
         <section className={styles.atributos}>
-
           <label htmlFor="cardAttr1">
             {/* <h3>Atributo 1</h3> */}
             <input type="text" placeholder='Atributo 1' maxLength={maxlength} name='atribNameField1' onChange={changeAttributNameField} className={styles.nameAtributField} />
@@ -59,7 +60,7 @@ export default function Form(props) {
           <p className={styles.pointsRemaining}>Pontos Restantes - {counter}</p>
           <label id="image-input" htmlFor="cardImage">
             <h3>Imagem</h3>
-            <input name="cardImage" type="text" required value={cardImage} onChange={onInputChange} onKeyUp={validation} />
+            <input name="cardImage" placeholder='Cole aqui o link da imagem!' type="text" required value={cardImage} onChange={onInputChange} onKeyUp={validation} />
             <div className={styles.imgLink}></div>
           </label>
         </section>
