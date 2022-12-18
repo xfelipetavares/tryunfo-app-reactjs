@@ -24,6 +24,7 @@ body {
   background: #052727;
   display: flex;
   justify-content: center;
+  width: 100%;
 
   header {
     text-align: center;
@@ -93,6 +94,37 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+  }
+}
+
+@media (max-width:1150px) {
+  .logo {
+    width: min(40rem, 100vw) !important;
+  }
+
+  .main-top {
+    width: 97vw;
+    align-self: center;
+    height: 145rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    margin-inline: auto;
+  
+    .right {
+      padding-top: 0rem;
+      h2 {
+
+      }
+    }
+  }
+  .main-bottom {
+
+    .deck {
+      width: 100%;
+      margin-top: 0rem;
+      margin-inline: auto;
     }
   }
 }

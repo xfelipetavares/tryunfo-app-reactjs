@@ -2,6 +2,31 @@
   outline: none;
 }
 
+
+@media (max-width:1150px) {
+  .form {
+    align-items: center !important;
+    width: min(40rem, 90%) !important;
+    gap: 2rem !important;
+    margin-inline: auto !important;
+
+    h2{
+      text-align: center;
+    }
+
+    .nameAtributField{
+      width: 100% !important;
+    }
+
+    .formBottom {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+
 .form {
   width: 40.4rem;
   display: flex;
