@@ -15,7 +15,7 @@ h3 {
   color: #3D495C;
 }
 
-a:hover {
+button:hover {
   cursor: pointer;
 }
 
@@ -124,6 +124,7 @@ body {
     .deck {
       width: 100%;
       margin-top: 0rem;
+      justify-content: center;
       margin-inline: auto;
     }
   }

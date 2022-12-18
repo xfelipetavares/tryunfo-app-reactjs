@@ -1,8 +1,11 @@
 @media (max-width:1150px) {
-  .card {
-    width: min(33.87rem, 100%) !important;
-    height: max(51.48rem, 53rem) !important;
-    margin-inline: auto !important;
+  .rightSide{
+    width: 95vw;
+    .card {
+      width: min(33.87rem, 100%) !important;
+      // height: max(51.48rem, 53rem) !important;
+      margin-inline: auto !important;
+    }
   }
 
 }
