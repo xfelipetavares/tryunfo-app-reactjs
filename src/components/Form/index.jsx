@@ -35,7 +35,7 @@ export default function Form(props) {
 
         <label className={styles.descrInput} htmlFor="cardDescription">
           <h3>Descrição</h3>
-          <textarea name="cardDescription" placeholder='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard.' cols={column} rows={rows} required maxLength={118} value={cardDescription} onChange={onInputChange} onKeyUp={validation} />
+          <textarea name="cardDescription" placeholder='' cols={column} rows={rows} required maxLength={118} value={cardDescription} onChange={onInputChange} onKeyUp={validation} />
         </label>
 
         <section className={styles.atributos}>
